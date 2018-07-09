@@ -1,0 +1,63 @@
+(function () {
+  'use strict';
+
+  angular.module('BlurAdmin.pages.form')
+      .service('discountCodeService', discountCodeService)
+      .service('configReadService', configReadService)
+      .controller('WizardCtrl', WizardCtrl);
+
+  /** @ngInject */
+  function WizardCtrl($scope, discountCodeService, configReadService) {
+    var vm = this;
+
+    vm.generalInfo = {};
+    vm.slicesInfo = {}; 
+
+    $scope.hexPicker = {
+      color: ''
+    };
+
+    configReadService.get()
+    .then(function(configData){
+      vm.generalInfo.name = configData.name;
+      vm.generalInfo.description = configData.description;
+
+      for(var index = 0; index < configData.labels.length; index++) {
+        vm.slicesInfo.label1 = configData.labels[index];
+      }
+    });
+
+    $scope.save =  function() {
+        console.log(vm.generalInfo.name);
+        console.log(vm.generalInfo.description);
+    };
+    
+    discountCodeService.get()
+    .then(function(codes) {
+      console.log(codes);
+      $scope.codes = codes;
+    });
+  }
+
+  function discountCodeService($http) {
+    this.get = function() {
+      return $http.get('http://localhost:8080/pricerules?shop=caxtest.myshopify.com')
+        .then(function(res) {
+          // return the discount codes
+          return res.data;
+      });
+    }
+  }
+
+  function configReadService($http) {
+    this.get = function() {
+      return $http.get('http://localhost:8080/configfile?shop=caxtest.myshopify.com')
+        .then(function(res) {
+          // return the config read from {shopid}_config.json 
+          return res.data;
+      });
+    }
+  }
+
+})();
+

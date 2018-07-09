@@ -1,0 +1,192 @@
+<div class="widgets">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="Form Wizard" ba-panel-class="with-scroll">
+                <ba-wizard>
+                    <!-- Wizard step for Campaign -->
+                    <ba-wizard-step title="General" form="vm.generalInfoForm">
+                        <form name="vm.generalInfoForm" novalidate>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group has-feedback"
+                                         ng-class="{'has-error': vm.generalInfoForm.name.$invalid && (vm.generalInfoForm.name.$dirty || vm.generalInfoForm.$submitted)}">
+                                        <label for="name1">Name</label>
+                                        <input type="text" class="form-control" id="name1" name="name" placeholder="Name" ng-model="vm.generalInfo.name" required>
+                                        <span class="help-block error-block basic-block">Required</span>
+                                    </div>
+                                    <div class="form-group" ng-class="{'has-error': vm.generalInfoForm.description.$invalid && (vm.generalInfoForm.description.$dirty || vm.generalInfoForm.$submitted)}">
+                                        <label for="desc1">Description</label>
+                                        <input type="text" class="form-control" id="desc1" name="description" placeholder="Description" ng-model="vm.generalInfo.description" required>
+                                        <span class="help-block error-block basic-block">Proper description required</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </ba-wizard-step>
+                    <ba-wizard-step title="Slices" form="vm.slicesForm">
+                        <form name="vm.slicesForm" novalidate>
+                            <!-- Row #1 -->
+                            <div class="row">
+                                <div class="form-group col-sm-1 col-xs-6">
+                                    <input type="text" class="form-control" id="type1" value="Prize" readonly>
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input type="text" class="form-control" id="label1" placeholder="Label" ng-model="vm.slicesInfo.label1">
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input colorpicker class="form-control" ng-model="hexPicker.color1" type="text" />
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <select id="coupon1" class="form-control" ng-model="vm.slicesInfo.coupon1" ng-options="item for item in codes"></select>
+                                </div>
+                            </div>
+                            <!-- Row #2 -->                            
+                            <div class="row">
+                                <div class="form-group col-sm-1 col-xs-6">
+                                    <input type="text" class="form-control" id="type2" value="Lose" readonly>
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input type="text" class="form-control" id="label2" placeholder="Label" ng-model="vm.slicesInfo.label2">
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input colorpicker class="form-control" ng-model="hexPicker.color2" type="text" />
+                                </div>                                
+                                <div class="form-group col-sm-3 col-xs-6">
+                                   <select id="coupon2" class="form-control" ng-model="vm.slicesInfo.coupon2" ng-options="item for item in codes"></select>
+                                </div>
+                            </div>
+                            <!-- Row #3 -->
+                            <div class="row">
+                                <div class="form-group col-sm-1 col-xs-6">
+                                    <input type="text" class="form-control" id="type3" value="Prize" readonly>
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input type="text" class="form-control" id="label3" placeholder="Label" ng-model="vm.slicesInfo.label3">
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input colorpicker class="form-control" ng-model="hexPicker.color3" type="text" />
+                                </div>                                
+                                <div class="form-group col-sm-3 col-xs-6">
+                                   <select id="coupon3" class="form-control" ng-model="vm.slicesInfo.coupon3" ng-options="item for item in codes"></select>
+                                </div>
+                            </div>
+                            <!-- Row #4 -->
+                            <div class="row">
+                                <div class="form-group col-sm-1 col-xs-6">
+                                    <input type="text" class="form-control" id="type4" value="Lose" readonly>
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input type="text" class="form-control" id="label4" placeholder="Label" ng-model="vm.slicesInfo.label4">
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input colorpicker class="form-control" ng-model="hexPicker.color4" type="text" />
+                                </div>                                
+                                <div class="form-group col-sm-3 col-xs-6">
+                                   <select id="coupon4" class="form-control" ng-model="vm.slicesInfo.coupon4" ng-options="item for item in codes"></select>
+                                </div>
+                            </div>
+                            <!-- Row #5 -->
+                            <div class="row">
+                                <div class="form-group col-sm-1 col-xs-6">
+                                    <input type="text" class="form-control" id="type5" value="Prize" readonly>
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input type="text" class="form-control" id="label5" placeholder="Label" ng-model="vm.slicesInfo.label5">
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input colorpicker class="form-control" ng-model="hexPicker.color5" type="text" />
+                                </div>                                
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <select id="coupon5" class="form-control" ng-model="vm.slicesInfo.coupon5" ng-options="item for item in codes"></select>
+                                </div>
+                            </div>
+                            <!-- Row #6 -->
+                            <div class="row">
+                                <div class="form-group col-sm-1 col-xs-6">
+                                    <input type="text" class="form-control" id="type6" value="Lose" readonly>
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input type="text" class="form-control" id="label6" placeholder="Label" ng-model="vm.slicesInfo.label6">
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input colorpicker class="form-control" ng-model="hexPicker.color6" type="text" />
+                                </div>                                
+                                <div class="form-group col-sm-3 col-xs-6">
+                                   <select id="coupon6" class="form-control" ng-model="vm.slicesInfo.coupon6" ng-options="item for item in codes"></select>
+                                </div>
+                            </div>
+                            <!-- Row #7 -->
+                            <div class="row">
+                                <div class="form-group col-sm-1 col-xs-6">
+                                    <input type="text" class="form-control" id="type7" value="Prize" readonly>
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input type="text" class="form-control" id="label7" placeholder="Label" ng-model="vm.slicesInfo.label7">
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input colorpicker class="form-control" ng-model="hexPicker.color7" type="text" />
+                                </div>                                
+                                <div class="form-group col-sm-3 col-xs-6">
+                                   <select id="coupon7" class="form-control" ng-model="vm.slicesInfo.coupon7" ng-options="item for item in codes"></select>
+                                </div>
+                            </div>
+                            <!-- Row #8 -->
+                            <div class="row">
+                                <div class="form-group col-sm-1 col-xs-6">
+                                    <input type="text" class="form-control" id="type8" value="Lose" readonly>
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input type="text" class="form-control" id="label8" placeholder="Label" ng-model="vm.slicesInfo.label8">
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input colorpicker class="form-control" ng-model="hexPicker.color8" type="text" />
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                   <select id="coupon8" class="form-control" ng-model="vm.slicesInfo.coupon8" ng-options="item for item in codes"></select>
+                                </div>
+                            </div>  
+                            <!-- Row #9 -->
+                            <div class="row">
+                                <div class="form-group col-sm-1 col-xs-6">
+                                    <input type="text" class="form-control" id="type9" value="Prize" readonly>
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input type="text" class="form-control" id="label9" placeholder="Label" ng-model="vm.slicesInfo.label9">
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input colorpicker class="form-control" ng-model="hexPicker.color9" type="text" />
+                                </div>                                
+                                <div class="form-group col-sm-3 col-xs-6">
+                                   <select id="coupon9" class="form-control" ng-model="vm.slicesInfo.coupon9" ng-options="item for item in codes"></select>
+                                </div>
+                            </div>      
+                            <!-- Row #10 -->
+                            <div class="row">
+                                <div class="form-group col-sm-1 col-xs-6">
+                                    <input type="text" class="form-control" id="type10" value="Prize" readonly>
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input type="text" class="form-control" id="label10" placeholder="Label" ng-model="vm.slicesInfo.label10">
+                                </div>
+                                <div class="form-group col-sm-3 col-xs-6">
+                                    <input colorpicker class="form-control" ng-model="hexPicker.color10" type="text" />
+                                </div>                                
+                                <div class="form-group col-sm-3 col-xs-6">
+                                   <select id="coupon10" class="form-control" ng-model="vm.slicesInfo.coupon10" ng-options="item for item in codes"></select>
+                                </div>
+                            </div>                                                         
+                        </form>
+                    </ba-wizard-step>
+                    <ba-wizard-step title="Finish">
+                        <form class="form-horizontal" name="vm.finishForm" novalidate>
+                            Congratulations! You have configured your roulette!
+                            <button ng-click="save()" type="button" class="btn btn-primary">Finish</button>
+                        </form>
+                    </ba-wizard-step>
+                </ba-wizard>
+            </div>
+        </div>
+    </div>
+
+</div>
